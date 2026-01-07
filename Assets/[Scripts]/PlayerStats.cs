@@ -4,5 +4,11 @@ public class PlayerStats
 {
     private int moveSpeed, maxHealth, jumpForce;
 
-    
+    public int MoveSpeed
+    {
+        get
+        {
+            return moveSpeed;
+        }
+    }
 }
