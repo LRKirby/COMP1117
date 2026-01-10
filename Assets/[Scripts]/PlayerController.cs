@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     // components
     private Rigidbody2D rb;
-    private PlayerStats stats;
+    public PlayerStats stats;
 
     // field variables
     private Vector2 moveInput;

@@ -17,6 +17,10 @@ public class PlayerStats
         {
             return moveSpeed;
         }
+        set
+        {
+            moveSpeed = value;
+        }
     }
 
     public int MaxHealth

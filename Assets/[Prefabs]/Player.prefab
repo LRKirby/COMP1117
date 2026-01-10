@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 4375736763559109208}
   - component: {fileID: 8554563372315660396}
   - component: {fileID: 4356535304656486335}
+  - component: {fileID: 5505784303555112350}
   - component: {fileID: 346495093617807186}
   - component: {fileID: 3207261009727961247}
   - component: {fileID: 2651712002249246785}
   - component: {fileID: 1439836623028289032}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c2115b9b67a5a4e83e282867259b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!114 &5505784303555112350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638994899439662303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bac641a60f4c1144bcb2aad3da87d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LandingDust
+  dust: {fileID: 3781592601519256771, guid: 78ab35a0995194e4f87fd3d6d7f1f088, type: 3}
 --- !u!114 &346495093617807186
 MonoBehaviour:
   m_ObjectHideFlags: 0
