@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c2115b9b67a5a4e83e282867259b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  initialSpeed: 5
+  initialMaxHealth: 100
+  initialJumpForce: 5
 --- !u!114 &5505784303555112350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +228,7 @@ Animator:
   m_GameObject: {fileID: 4638994899439662303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4cff99bdcba65045bd79a993cb7a7cd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 489705ccb92498a4c8498d61b05aacdb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
