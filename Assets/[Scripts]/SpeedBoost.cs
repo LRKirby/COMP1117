@@ -5,7 +5,7 @@ public class SpeedBoost : MonoBehaviour
 {
     private PlayerController player;
     private AbilityCooldowns cooldown;
-    private int speed;
+    private float speed;
 
     private void Awake()
     {

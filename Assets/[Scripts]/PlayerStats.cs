@@ -2,40 +2,53 @@ using UnityEngine;
 
 public class PlayerStats
 {
-    private int moveSpeed, maxHealth, jumpForce;
+    // private fields
+    private float moveSpeed, jumpForce;
+    private int maxHealth, currentHealth;
 
-    public PlayerStats(int moveSpeed, int maxHealth, int jumpForce)
+    // constructor
+    public PlayerStats(float moveSpeed, int maxHealth, float jumpForce)
     {
         this.moveSpeed = moveSpeed;
         this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth;
         this.jumpForce = jumpForce;
     }
 
-    public int MoveSpeed
+    // public properties
+    public float MoveSpeed
     {
-        get
-        {
-            return moveSpeed;
-        }
+        get{return moveSpeed;}
         set
         {
-            moveSpeed = value;
+            if (value > 20)
+            {
+                moveSpeed = 20;
+            }
+            else
+            {
+                moveSpeed = value;
+            }
         }
     }
 
     public int MaxHealth
     {
-        get
-        {
-            return maxHealth;
-        }
+        get{return maxHealth;}
     }
 
-    public int JumpForce
+    public float JumpForce
     {
-        get
+        get{return jumpForce;}
+    }
+
+    public int CurrentHealth
+    {
+        get{return currentHealth;}
+        set
         {
-            return jumpForce;
+            currentHealth = value;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         }
     }
 }

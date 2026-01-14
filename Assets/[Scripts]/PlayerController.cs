@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // initial player stats
+    [Header("Initial Player Stats")]
+    [SerializeField] private float initialSpeed = 5;
+
     // components
     private Rigidbody2D rb;
     public PlayerStats stats;
@@ -38,5 +42,11 @@ public class PlayerController : MonoBehaviour
         float velocityX = moveInput.x;
 
         rb.linearVelocity = new Vector2(velocityX * stats.MoveSpeed, rb.linearVelocity.y);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        stats.CurrentHealth -= amount;
+        Debug.Log(stats.CurrentHealth);
     }
 }
