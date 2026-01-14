@@ -3,6 +3,7 @@ using UnityEngine;
 public class Lava : MonoBehaviour
 {
     private PlayerController player;
+    [SerializeField] private int damage;
 
     private void Awake()
     {
@@ -13,7 +14,7 @@ public class Lava : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.TakeDamage(10);
+            player.TakeDamage(damage);
         }
     }
 }

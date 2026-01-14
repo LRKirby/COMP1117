@@ -12,6 +12,5 @@ public class AbilityCooldowns : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         player.stats.MoveSpeed -= speed;
-        Debug.Log(player.stats.MoveSpeed);
     }
 }

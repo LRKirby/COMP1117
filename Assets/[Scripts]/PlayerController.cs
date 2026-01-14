@@ -3,9 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // initial player stats
     [Header("Initial Player Stats")]
     [SerializeField] private float initialSpeed = 5;
+    [SerializeField] private int initialMaxHealth = 100;
+    [SerializeField] private float initialJumpForce = 5;
+
 
     // components
     private Rigidbody2D rb;
@@ -17,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        stats = new PlayerStats(5, 100, 5);
+        stats = new PlayerStats(initialSpeed, initialMaxHealth, initialJumpForce);
         Debug.Log($"Move speed: {stats.MoveSpeed} Max health: {stats.MaxHealth} Jump force: {stats.JumpForce}");
     }
 
@@ -47,6 +49,5 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int amount)
     {
         stats.CurrentHealth -= amount;
-        Debug.Log(stats.CurrentHealth);
     }
 }

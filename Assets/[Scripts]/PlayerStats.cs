@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerStats
@@ -6,49 +7,52 @@ public class PlayerStats
     private float moveSpeed, jumpForce;
     private int maxHealth, currentHealth;
 
-    // constructor
+    // constructors
+    // default constructor
+    public PlayerStats()
+    {
+        moveSpeed = 5;
+        jumpForce = 5;
+        maxHealth = 100;
+        currentHealth = maxHealth;
+    }
+    // overloaded constructor
     public PlayerStats(float moveSpeed, int maxHealth, float jumpForce)
     {
         this.moveSpeed = moveSpeed;
         this.maxHealth = maxHealth;
-        this.currentHealth = maxHealth;
+        currentHealth = maxHealth;
         this.jumpForce = jumpForce;
     }
 
     // public properties
     public float MoveSpeed
     {
-        get{return moveSpeed;}
+        get{ return moveSpeed; }
         set
         {
-            if (value > 20)
-            {
-                moveSpeed = 20;
-            }
-            else
-            {
-                moveSpeed = value;
-            }
+            moveSpeed = Mathf.Clamp(value, 0, 20);
+            Debug.Log($"Speed set to {moveSpeed}");
         }
     }
 
     public int MaxHealth
     {
-        get{return maxHealth;}
+        get{ return maxHealth; }
     }
 
     public float JumpForce
     {
-        get{return jumpForce;}
+        get{ return jumpForce; }
     }
 
     public int CurrentHealth
     {
-        get{return currentHealth;}
+        get{ return currentHealth; }
         set
         {
-            currentHealth = value;
-            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+            currentHealth = Mathf.Clamp(value, 0, maxHealth);
+            Debug.Log($"Health set to {currentHealth}");
         }
     }
 }
