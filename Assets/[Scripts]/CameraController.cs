@@ -2,14 +2,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Transform target;
+    [SerializeField] private Transform target;
     private float smoothTime = 0.2f;
     private Vector3 velocity;
-
-    private void Awake()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
 
     public float SmoothTime
     {

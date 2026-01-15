@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e947b82b8a6ef546b5b42119bb1de99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  target: {fileID: 923378919}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +411,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63589e0ad33900a45ad8ca2fcd3a19be, type: 3}
+--- !u!4 &923378919 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4375736763559109208, guid: 63589e0ad33900a45ad8ca2fcd3a19be, type: 3}
+  m_PrefabInstance: {fileID: 923378918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1216376068 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4356535304656486335, guid: 63589e0ad33900a45ad8ca2fcd3a19be, type: 3}
@@ -542,6 +548,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1216376068}
+    - target: {fileID: 2147515561226359403, guid: 6d0460c7304096c4a8841c013cd67357, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4837819425697216523, guid: 6d0460c7304096c4a8841c013cd67357, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.3

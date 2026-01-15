@@ -17,7 +17,7 @@ public class SpeedBoost : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player.stats.MoveSpeed += speed;
-            cooldown.OriginalSpeed(player, player.stats.MoveSpeed - speed);
+            cooldown.OriginalSpeed(player, speed);
             Destroy(gameObject);
         }
     }
