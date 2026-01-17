@@ -49,5 +49,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int amount)
     {
         stats.CurrentHealth -= amount;
+        if (stats.IsDead)
+            Debug.Log("Player has perished");
     }
 }

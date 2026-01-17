@@ -55,4 +55,14 @@ public class PlayerStats
             Debug.Log($"Health set to {currentHealth}");
         }
     }
+
+    public bool IsDead
+    {
+        get
+        {
+            if (CurrentHealth <= 0)
+                return true;
+            return false;
+        }
+    }
 }
