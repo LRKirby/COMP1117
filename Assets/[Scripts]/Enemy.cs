@@ -1,16 +1,12 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
-    [SerializeField] private PlayerController player;
-    [SerializeField] private int damage;
+    [Header("Enemy Settings")]
+    [SerializeField] private float patrolDistance = 5;
 
-    public void OnAttack(InputValue value)
+    protected override void Awake()
     {
-        if (value.isPressed)
-        {
-            player.TakeDamage(damage);
-        }
+        base.Awake();
     }
 }

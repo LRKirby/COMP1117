@@ -11,6 +11,6 @@ public class AbilityCooldowns : MonoBehaviour
     IEnumerator Speed(PlayerController player, float speed)
     {
         yield return new WaitForSeconds(5);
-        player.stats.MoveSpeed -= speed;
+        //player.stats.MoveSpeed -= speed;
     }
 }

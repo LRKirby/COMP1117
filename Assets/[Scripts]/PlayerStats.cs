@@ -12,7 +12,7 @@ public class PlayerStats
     public PlayerStats()
     {
         moveSpeed = 5;
-        jumpForce = 5;
+        jumpForce = 7;
         maxHealth = 100;
         currentHealth = maxHealth;
     }

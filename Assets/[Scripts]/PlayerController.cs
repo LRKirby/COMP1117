@@ -1,55 +1,67 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+[RequireComponent(typeof(PlayerInputHandler), typeof(Rigidbody2D))]
+public class PlayerController : Character
 {
-    [Header("Initial Player Stats")]
-    [SerializeField] private float initialSpeed = 5;
-    [SerializeField] private int initialMaxHealth = 100;
-    [SerializeField] private float initialJumpForce = 5;
-
+    // jumping logic
+    [Header("Movement Settings")]
+    [SerializeField] private float jumpForce = 12;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius = 0.2f;
 
     // components
     private Rigidbody2D rb;
-    public PlayerStats stats;
+    private PlayerInputHandler input;
+    private bool isGrounded;
 
-    // field variables
-    private Vector2 moveInput;
-
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        // initialize
         rb = GetComponent<Rigidbody2D>();
-        stats = new PlayerStats(initialSpeed, initialMaxHealth, initialJumpForce);
-        Debug.Log($"Move speed: {stats.MoveSpeed} Max health: {stats.MaxHealth} Jump force: {stats.JumpForce}");
+        input = GetComponent<PlayerInputHandler>();
     }
 
-    private void OnMove(InputValue value)
+    private void Update()
     {
-        moveInput = value.Get<Vector2>();
-    }
-
-    private void OnJump(InputValue value)
-    {
-        float velocityY = stats.JumpForce;
-        rb.linearVelocityY = velocityY;
+        // perform ground check
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        Debug.Log(isGrounded);
     }
 
     private void FixedUpdate()
     {
-        ApplyMovement();
+        if (IsDead)
+        {
+            return;
+        }
+
+        HandleMovement();
+        HandleJump();
     }
 
-    private void ApplyMovement()
+    private void HandleMovement()
     {
-        float velocityX = moveInput.x;
+        float horizontalVelocity = input.MoveInput.x * MoveSpeed;
 
-        rb.linearVelocity = new Vector2(velocityX * stats.MoveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(horizontalVelocity, rb.linearVelocity.y);
     }
 
-    public void TakeDamage(int amount)
+    private void HandleJump()
     {
-        stats.CurrentHealth -= amount;
-        if (stats.IsDead)
-            Debug.Log("Player has perished");
+        if (input.JumpTriggered && isGrounded)
+        {
+            ApplyJumpForce();
+        }
+    }
+
+    private void ApplyJumpForce()
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
