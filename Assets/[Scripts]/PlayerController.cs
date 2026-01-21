@@ -64,4 +64,20 @@ public class PlayerController : Character
 
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            if (rb.linearVelocity.y < 0)
+            {
+                enemy.TakeDamage(100);
+            }
+            else
+            {
+                TakeDamage(10);
+            }
+        }
+    }
 }
