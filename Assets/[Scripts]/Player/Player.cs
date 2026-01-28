@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerInputHandler), typeof(Rigidbody2D))]
-public class PlayerController : Character
+public class Player : Character
 {
     // jumping logic
     [Header("Movement Settings")]
@@ -30,6 +30,18 @@ public class PlayerController : Character
         // perform ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         Debug.Log(isGrounded);
+
+        anim.SetFloat("XVelocity", Mathf.Abs(rb.linearVelocity.x));
+
+        // jumping
+        anim.SetBool("IsGrounded", isGrounded);
+        anim.SetFloat("YVelocity", rb.linearVelocity.y);
+
+        // sprite flipping
+        if (input.MoveInput.x != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);
+        }
     }
 
     private void FixedUpdate()

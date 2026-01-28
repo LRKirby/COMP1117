@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    private PlayerController player;
+    private Player player;
     [SerializeField] private int damage;
 
     private void Awake()
     {
-        player = FindFirstObjectByType<PlayerController>();
+        player = FindFirstObjectByType<Player>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

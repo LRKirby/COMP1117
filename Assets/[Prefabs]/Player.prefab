@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4375736763559109208}
   - component: {fileID: 8554563372315660396}
-  - component: {fileID: 4356535304656486335}
+  - component: {fileID: 1098653212778610922}
   - component: {fileID: 5505784303555112350}
   - component: {fileID: 346495093617807186}
   - component: {fileID: 3207261009727961247}
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4356535304656486335
+--- !u!114 &1098653212778610922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,9 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4638994899439662303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79c2115b9b67a5a4e83e282867259b27, type: 3}
+  m_Script: {fileID: 11500000, guid: af92db844271f5542b19636a13f2877b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 5
   maxHealth: 100
   jumpForce: 12
@@ -322,8 +322,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000000029802322, y: 0.6552865}
-  m_Size: {x: 0.9607864, y: 1.3452307}
+  m_Offset: {x: 0.000000029802322, y: 0.6660199}
+  m_Size: {x: 0.9607864, y: 1.3237638}
   m_Direction: 0
 --- !u!95 &1439836623028289032
 Animator:

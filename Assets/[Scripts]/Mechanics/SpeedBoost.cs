@@ -3,14 +3,9 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
+    [SerializeField] private Player player;
     [SerializeField] private AbilityCooldowns cooldown;
-    private float speed;
-
-    private void Awake()
-    {
-        speed = 5;
-    }
+    private float speed = 5;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

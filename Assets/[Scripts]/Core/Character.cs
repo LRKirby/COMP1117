@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
     // private variables
@@ -9,6 +10,7 @@ public class Character : MonoBehaviour
 
     private int currentHealth;
     private bool isDead = false;
+    protected Animator anim;
 
     // public properties
     public float MoveSpeed
@@ -29,6 +31,7 @@ public class Character : MonoBehaviour
 
     protected virtual void Awake()
     {
+        anim = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
