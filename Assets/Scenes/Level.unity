@@ -993,6 +993,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3455727140465735592, guid: 8e3ecb6b038b9a445b03ed27b6ec7d54, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6f462620e81c7be4f9c392f019bc7c72, type: 2}
     - target: {fileID: 4831042387082492147, guid: 8e3ecb6b038b9a445b03ed27b6ec7d54, type: 3}
       propertyPath: m_Name
       value: Eagle
@@ -1003,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6078548703916647612, guid: 8e3ecb6b038b9a445b03ed27b6ec7d54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.22
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6078548703916647612, guid: 8e3ecb6b038b9a445b03ed27b6ec7d54, type: 3}
       propertyPath: m_LocalPosition.z

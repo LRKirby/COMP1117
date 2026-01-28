@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5081530183041627219}
   - component: {fileID: 859773565457813196}
   - component: {fileID: 1685858906637951072}
+  - component: {fileID: 3455727140465735592}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Untagged
@@ -154,8 +155,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.030324936, y: 0}
-  m_Radius: 1.075037
+  m_Offset: {x: -0.21746814, y: 0.90155065}
+  m_Radius: 0.8114282
 --- !u!114 &1685858906637951072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +172,25 @@ MonoBehaviour:
   moveSpeed: 5
   maxHealth: 100
   patrolDistance: 5
+--- !u!95 &3455727140465735592
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831042387082492147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

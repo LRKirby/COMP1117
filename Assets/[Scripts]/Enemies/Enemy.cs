@@ -3,16 +3,14 @@ using UnityEngine;
 public class Enemy : Character
 {
     [Header("Enemy Settings")]
-    [SerializeField] private float patrolDistance = 4;
+    [SerializeField] private float patrolDistance = 5;
     private Vector2 startPos;
-    private int direction = 1;
-    private Rigidbody2D rb;
+    private int direction = -1;
 
     protected override void Awake()
     {
         base.Awake();
         startPos = transform.position;
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -26,15 +24,23 @@ public class Enemy : Character
 
     private void HandleMovement()
     {
-        float pos = transform.position.x - startPos.x;
-        if (pos >= patrolDistance)
+        // movement bounds
+        float leftBound = startPos.x - patrolDistance;
+        float rightBound = startPos.x + patrolDistance;
+
+        // move enemy
+        transform.Translate(Vector2.right * direction * MoveSpeed * Time.deltaTime);
+
+        // flip enemy
+        if (transform.position.x >= rightBound)
         {
             direction = -1;
+            transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (pos <= -patrolDistance)
+        else if (transform.position.x <= leftBound)
         {
             direction = 1;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
-        rb.linearVelocity = new Vector2(direction * MoveSpeed, 0);
     }
 }

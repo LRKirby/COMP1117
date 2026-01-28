@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(PlayerInputHandler), typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerInputHandler))]
 public class Player : Character
 {
     // jumping logic
@@ -13,7 +13,6 @@ public class Player : Character
     [SerializeField] private float groundCheckRadius = 0.2f;
 
     // components
-    private Rigidbody2D rb;
     private PlayerInputHandler input;
     private bool isGrounded;
 
@@ -21,7 +20,6 @@ public class Player : Character
     {
         base.Awake();
         // initialize
-        rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInputHandler>();
     }
 
