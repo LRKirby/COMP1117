@@ -15,6 +15,7 @@ public class Player : Character
     // components
     private PlayerInputHandler input;
     private bool isGrounded;
+    private float currentSpeedModifier = 1;
 
     protected override void Awake()
     {
@@ -36,7 +37,7 @@ public class Player : Character
         anim.SetFloat("YVelocity", rb.linearVelocity.y);
 
         // sprite flipping
-        if (input.MoveInput.x != 0)
+        if (input.MoveInput.x != 0 && !isDead)
         {
             transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);
         }
@@ -55,9 +56,11 @@ public class Player : Character
 
     private void HandleMovement()
     {
-        float horizontalVelocity = input.MoveInput.x * MoveSpeed;
+        float horizontalVelocity = input.MoveInput.x * MoveSpeed * currentSpeedModifier;
 
         rb.linearVelocity = new Vector2(horizontalVelocity, rb.linearVelocity.y);
+
+        currentSpeedModifier = 1;
     }
 
     private void HandleJump()
@@ -89,5 +92,21 @@ public class Player : Character
                 TakeDamage(10);
             }
         }
+    }
+
+    public void ApplySpeedModifier(float speedModifier)
+    {
+        currentSpeedModifier = speedModifier;
+    }
+
+    public override void Die()
+    {
+        isDead = true;
+        Debug.Log("Player has died");
+
+        // add player specific death logic
+        // set death animation
+        // trigger death ui
+        // level reset logic
     }
 }

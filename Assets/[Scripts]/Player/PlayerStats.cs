@@ -25,17 +25,6 @@ public class PlayerStats
         this.jumpForce = jumpForce;
     }
 
-    // public properties
-    public float MoveSpeed
-    {
-        get{ return moveSpeed; }
-        set
-        {
-            moveSpeed = Mathf.Clamp(value, 0, 20);
-            Debug.Log($"Speed set to {moveSpeed}");
-        }
-    }
-
     public int MaxHealth
     {
         get{ return maxHealth; }

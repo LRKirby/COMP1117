@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     // private variables
     [Header("Character Stats")]
@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
 
     private int currentHealth;
-    private bool isDead = false;
+    protected bool isDead = false;
     protected Animator anim;
     protected Rigidbody2D rb;
 
@@ -17,6 +17,8 @@ public class Character : MonoBehaviour
     public float MoveSpeed
     {
         get {  return moveSpeed; }
+        set 
+        { moveSpeed = Mathf.Clamp(value, 0, 20); }
     }
 
     public bool IsDead
@@ -53,9 +55,6 @@ public class Character : MonoBehaviour
         }
     }
 
-    protected void Die()
-    {
-        isDead = true;
-        Debug.Log($"{gameObject.name} has died.");
-    }
+    // each child will implememnt their own death
+    public abstract void Die();
 }
