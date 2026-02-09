@@ -39,7 +39,7 @@ public class Player : Character
         // sprite flipping
         if (input.MoveInput.x != 0 && !isDead)
         {
-            transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);
+            transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), transform.localScale.y, 1);
         }
     }
 
@@ -49,7 +49,7 @@ public class Player : Character
         {
             return;
         }
-
+        
         HandleMovement();
         HandleJump();
     }
