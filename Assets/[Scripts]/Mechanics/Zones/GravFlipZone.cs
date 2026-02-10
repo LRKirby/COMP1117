@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class GravFlipZone : Zone
 {
+    [SerializeField] private float gravity = -9.81f;
+
     protected override void ApplyZoneEffect(Player player)
     {
-        Physics2D.gravity = new Vector2 (0, 9.81f);
+        Physics2D.gravity = new Vector2 (0, -gravity);
         player.transform.localScale = new Vector3(1, -1, 1);
     }
 
@@ -13,7 +14,7 @@ public class GravFlipZone : Zone
     {
         if (other.TryGetComponent(out Player player))
         {
-            Physics2D.gravity = new Vector2(0, -9.81f);
+            Physics2D.gravity = new Vector2(0, gravity);
             player.transform.localScale = new Vector3(1, 1, 1);
         }
     }
