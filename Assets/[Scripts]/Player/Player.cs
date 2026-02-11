@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(PlayerInputHandler))]
 public class Player : Character
 {
+    public static Player instance;
     // jumping logic
     [Header("Movement Settings")]
     [SerializeField] private float jumpForce = 12;
@@ -21,6 +22,7 @@ public class Player : Character
     {
         base.Awake();
         // initialize
+        instance = this;
         input = GetComponent<PlayerInputHandler>();
     }
 

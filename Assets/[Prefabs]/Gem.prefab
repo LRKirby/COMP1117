@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6478336542127858744}
   - component: {fileID: 203939587187674844}
   - component: {fileID: 4436952304315898994}
+  - component: {fileID: 118601538988749402}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -106,9 +107,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -178,3 +179,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.005077362, y: 0.02875194}
   m_Radius: 0.38756943
+--- !u!114 &118601538988749402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599273343629983369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b910203628bcd444b4ebf0b2dcad7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GemFollow
+  waitTime: 5

@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreasureChest
   gemPrefab: {fileID: 5599273343629983369, guid: c0cb9809fa0af3f4a9f1fbcf3e229385, type: 3}
-  gemCount: 100
-  launchForce: 10
+  gemCount: 5
+  launchForce: 5
   openChestSprite: {fileID: -5627866836883545433, guid: 7c5e167623dc84846a4c5306bd2b582c, type: 3}
