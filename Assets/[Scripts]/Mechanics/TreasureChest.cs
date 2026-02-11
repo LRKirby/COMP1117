@@ -1,0 +1,47 @@
+using UnityEngine;
+
+public class TreasureChest : MonoBehaviour, IInteractable
+{
+    [Header("Loot Settings")]
+    [SerializeField] private GameObject gemPrefab;
+    [SerializeField] private int gemCount = 3;
+    [SerializeField] private float launchForce = 5;
+
+    [Header("Visuals")]
+    [SerializeField] private Sprite openChestSprite;
+
+    private SpriteRenderer sRend;
+    private bool isOpen;
+
+    private void Awake()
+    {
+        sRend = GetComponent<SpriteRenderer>();
+    }
+
+    public void Interact()
+    {
+        if (isOpen)
+            return;
+
+        isOpen = true;
+        OpenChest();
+    }
+
+    private void OpenChest()
+    {
+        if (sRend != null && openChestSprite != null)
+            sRend.sprite = openChestSprite;
+
+        for (int i = 0; i < gemCount; i++)
+        {
+            GameObject gem = Instantiate(gemPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D gemRB = gem.GetComponent<Rigidbody2D>();
+
+            if (gemRB != null)
+            {
+                Vector2 force = new Vector2(Random.Range(-1f, 1f), 1.5f).normalized * launchForce;
+                gemRB.AddForce(force, ForceMode2D.Impulse);
+            }
+        }
+    }
+}

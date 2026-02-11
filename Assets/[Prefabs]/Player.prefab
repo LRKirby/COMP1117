@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2651712002249246785}
   - component: {fileID: 1439836623028289032}
   - component: {fileID: 672451098069771787}
+  - component: {fileID: 7237728824975411793}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -181,7 +182,19 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7237728824975411793}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -359,6 +372,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac7f0bb6ccf42a4e960a618d9e0c362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+--- !u!114 &7237728824975411793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638994899439662303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a2b6bcbee7754439d2d181ae6bf78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  interactRange: 1.5
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6319959517276987366
 GameObject:
   m_ObjectHideFlags: 0
