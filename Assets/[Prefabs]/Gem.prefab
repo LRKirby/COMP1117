@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 203939587187674844}
   - component: {fileID: 4436952304315898994}
   - component: {fileID: 118601538988749402}
+  - component: {fileID: 5638809956528369921}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -192,3 +193,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemFollow
   waitTime: 5
+--- !u!114 &5638809956528369921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599273343629983369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587400336325e0a42aa31264087e86dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gem
